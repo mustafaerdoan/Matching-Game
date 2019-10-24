@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px 0;
+  background: red;
+}
+
+.grid {
+  max-width: 650px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  position: relative;
+  transition: all .4s linear;
+  transform-style: preserve-3d;
+  margin: 5px;
+}
+
+.card,
+.back,
+.front {
+  height: 100px;
+  width: 150px;
+  left:100 px;
+}
+
+.control {
+  height: 75px;
+  width: 150px;
+}
+
+.back,
+.front {
+  position: absolute;
+}
+
+.front {
+  z-index: 2;
+  background: #FAB942 url('img/click.png') no-repeat center center / contain;
+}
+
+.back {
+  background-color: yellow;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.selected .front {
+  display: none;
+}
+
+.match .front {
+  display: none;
+}
+.match .back {
+  opacity: 0.1;
+}
